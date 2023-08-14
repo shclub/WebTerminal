@@ -2,6 +2,7 @@ FROM node:16.16
 
 WORKDIR /home/node
 
+COPY /server/*  ./
 COPY entrypoint.server.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
