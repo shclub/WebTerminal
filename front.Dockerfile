@@ -10,8 +10,13 @@ COPY /frontend/*  ./
 RUN ls ./
 RUN pwd
 RUN yarn
-RUN yarn ./lib
-RUN yarn link ./lib
+
+WORKDIR /home/node/lib
+
+RUN yarn  && yarn link
+
+WORKDIR /home/node/lib
+
 RUN yarn link webterminal && yarn dev
 
 # RUN yarn && cd ./lib && yarn && yarn link && cd ../ && yarn link webterminal && yarn dev
