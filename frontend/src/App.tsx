@@ -1,5 +1,5 @@
 import React from 'react';
-import WebTerminal from 'WebTerminal';
+import WebTerminal from 'webterminal';
 
 import '../lib/node_modules/xterm/css/xterm.css';
 import SocketConfig from './config/SocketConfig';
