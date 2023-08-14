@@ -1,36 +1,16 @@
 FROM node:16.16 as build
 
 WORKDIR /home/node
-
-#COPY entrypoint.front.sh ./entrypoint.sh
  
 COPY nginx.conf ./
 COPY /frontend/*  ./
 
-RUN ls ./
-RUN pwd
-RUN yarn
-
 WORKDIR /home/node/lib
-
 RUN yarn  && yarn link
 
-WORKDIR /home/node/lib
-
+WORKDIR /home/node
 RUN yarn link webterminal && yarn dev
 
-# RUN yarn && cd ./lib && yarn && yarn link && cd ../ && yarn link webterminal && yarn dev
-
-#RUN cd ./lib
-#RUN yarn
-#RUN yarn link
-
-#RUN cd ../
-#RUN yarn link webterminal
-
-#RUN yarn dev
-
-# RUN ./entrypoint.sh
 #ENTRYPOINT ["/entrypoint.sh"]
 
 #
