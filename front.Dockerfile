@@ -2,8 +2,8 @@ FROM node:16.16 as build
 
 WORKDIR /home/node
  
-COPY nginx.conf ./
-COPY /frontend/*  ./
+COPY nginx.conf /
+COPY frontend/  /
 
 RUN ls 
 WORKDIR /home/node/lib
