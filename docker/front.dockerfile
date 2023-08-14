@@ -1,3 +1,10 @@
+FROM node:16.16 as build
+
+WORKDIR /home/node
+
+COPY config/entrypoint.front.sh /entrypoint.sh
+COPY nginx.conf ./
+
 #
 # Package stage
 #
