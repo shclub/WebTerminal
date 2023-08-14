@@ -2,7 +2,7 @@ FROM node:16.16 as build
 
 WORKDIR /home/node
  
-COPY nginx.conf /
+COPY nginx.conf ./
 COPY frontend/  /
 
 RUN ls 
@@ -12,11 +12,10 @@ RUN yarn  && yarn link
 WORKDIR /home/node
 RUN yarn link webterminal
 
-
 RUN ls
 WORKDIR /home/node
 
-RUN yarn start
+RUN yarn dev
 
 #ENTRYPOINT ["/entrypoint.sh"]
 
