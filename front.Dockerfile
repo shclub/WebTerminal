@@ -9,7 +9,7 @@ RUN ls /home/node
 RUN pwd
 COPY /frontend/*  ./
 
-RUN ls /home/node
+ENTRYPOINT ["/entrypoint.sh"]
 
 #
 # Package stage
