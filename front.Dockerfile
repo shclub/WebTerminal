@@ -2,14 +2,14 @@ FROM node:16.16 as build
 
 WORKDIR /home/node
 
-COPY entrypoint.front.sh /entrypoint.sh
+COPY entrypoint.front.sh ./entrypoint.sh
  
 COPY nginx.conf ./
 RUN ls /home/node
 RUN pwd
 COPY /frontend/*  ./
 
-RUN /entrypoint.sh
+RUN ./entrypoint.sh
 #ENTRYPOINT ["/entrypoint.sh"]
 
 #
