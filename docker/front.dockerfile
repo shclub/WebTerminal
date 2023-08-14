@@ -4,9 +4,10 @@ WORKDIR /home/node
 
 COPY config/entrypoint.front.sh /entrypoint.sh
 
-RUN ls /home/node
 COPY nginx.conf ./
-COPY ../frontend/*  ./
+RUN ls /home/node
+RUN pwd
+ADD ../frontend/*  ./
 
 RUN ls /home/node
 
