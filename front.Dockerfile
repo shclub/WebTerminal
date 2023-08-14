@@ -5,9 +5,9 @@ WORKDIR /home/node
 #COPY entrypoint.front.sh ./entrypoint.sh
  
 COPY nginx.conf ./
-COPY /frontend/*  ./
+# COPY /frontend/*  ./
 
-RUN yarn && cd ./lib && yarn && yarn link && cd ../ && yarn link webterminal && yarn dev
+RUN cd /frontend & yarn && cd ./lib && yarn && yarn link && cd ../ && yarn link webterminal && yarn dev
 
 #RUN cd ./lib
 #RUN yarn
