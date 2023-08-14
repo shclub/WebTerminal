@@ -11,11 +11,11 @@ COPY /frontend/*  ./
 
 RUN yarn
 
-RUN cd lib
+RUN cd ./lib
 RUN yarn
 RUN yarn link
 
-RUN cd ..
+RUN cd ../
 RUN yarn link webterminal
 
 RUN yarn dev
