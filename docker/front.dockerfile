@@ -6,7 +6,7 @@ COPY config/entrypoint.front.sh /entrypoint.sh
 
 RUN ls /home/node
 COPY nginx.conf ./
-COPY frontend  ./
+COPY ../frontend  ./
 
 RUN ls /home/node
 
