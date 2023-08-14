@@ -9,7 +9,8 @@ WORKDIR /home/node/lib
 RUN yarn  && yarn link
 
 WORKDIR /home/node
-RUN yarn link webterminal && yarn dev
+RUN yarn link webterminal
+RUN yarn dev
 
 #ENTRYPOINT ["/entrypoint.sh"]
 
