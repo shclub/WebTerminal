@@ -12,6 +12,7 @@ RUN yarn  && yarn link
 WORKDIR /home/node
 RUN yarn link webterminal
 
+
 RUN ls
 WORKDIR /home/node
 
