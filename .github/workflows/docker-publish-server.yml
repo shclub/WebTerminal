@@ -2,7 +2,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Publish Docker Hub Backen image
+name: Publish Docker Hub Server image
 
 on:      
   workflow_dispatch:
