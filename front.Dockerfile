@@ -11,7 +11,8 @@ RUN yarn  && yarn link
 WORKDIR /home/node
 RUN yarn link webterminal
 
-WORKDIR /home/node/lib
+RUN ls /home/node/public
+WORKDIR /home/node
 
 RUN yarn start
 
