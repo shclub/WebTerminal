@@ -3,7 +3,12 @@ FROM node:16.16 as build
 WORKDIR /home/node
 
 COPY config/entrypoint.front.sh /entrypoint.sh
+
+RUN ls /home/node
 COPY nginx.conf ./
+COPY frontend  ./
+
+RUN ls /home/node
 
 #
 # Package stage
@@ -14,7 +19,7 @@ FROM ghcr.io/shclub/nginx:stable-alpine
 ENV TZ Asia/Seoul
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-COPY --from=build /home/node/build /usr/share/nginx/html
+COPY --from=build /home/node/* /usr/share/nginx/html
 COPY --from=build /home/node/nginx.conf /etc/nginx/conf.d/default.conf
 
 ENV BACKEND_API_URL backend
