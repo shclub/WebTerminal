@@ -8,7 +8,7 @@ COPY nginx.conf ./
 COPY /frontend/*  ./
 
 RUN ls ./
-RUN ls pwd
+RUN pwd
 RUN yarn
 RUN yarn ./lib
 RUN yarn link ./lib
