@@ -10,7 +10,10 @@ RUN yarn  && yarn link
 
 WORKDIR /home/node
 RUN yarn link webterminal
-RUN yarn run build
+
+WORKDIR /home/node/lib
+
+RUN yarn start
 
 #ENTRYPOINT ["/entrypoint.sh"]
 
