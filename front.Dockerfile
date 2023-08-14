@@ -5,13 +5,14 @@ WORKDIR /home/node
 COPY nginx.conf ./
 COPY /frontend/*  ./
 
+RUN ls 
 WORKDIR /home/node/lib
 RUN yarn  && yarn link
 
 WORKDIR /home/node
 RUN yarn link webterminal
 
-RUN ls /home/node/public
+RUN ls
 WORKDIR /home/node
 
 RUN yarn start
